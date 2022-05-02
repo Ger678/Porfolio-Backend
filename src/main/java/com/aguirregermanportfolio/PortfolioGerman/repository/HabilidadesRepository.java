@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aguirregermanportfolio.PortfolioGerman.model.repository;
+package com.aguirregermanportfolio.PortfolioGerman.repository;
 
 import com.aguirregermanportfolio.PortfolioGerman.model.Habilidades;
 import java.util.Optional;

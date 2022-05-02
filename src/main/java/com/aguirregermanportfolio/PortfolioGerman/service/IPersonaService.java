@@ -3,27 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aguirregermanportfolio.PortfolioGerman.model.service;
+package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Habilidades;
+import com.aguirregermanportfolio.PortfolioGerman.model.Persona;
 import java.util.List;
 
 /**
  *
  * @author German
  */
-public interface IHabilidadesService {
+public interface IPersonaService {
     
     //método para traer todas las personas
-    public List<Habilidades> getHabilidades();    
+    public List<Persona> getPersona();    
     
     //método para dar el alta una persona
-    public void saveHabilidades (Habilidades habi);
+    public void savePersona (Persona perso);
     
     //método para borrar una persona
-    public void deleteHabilidades (Long id);
+    public void deletePersona (Long id);
     
     //método para encontrar una persona
-    public Habilidades findHabilidades (Long id);
-    
+    public Persona findPersona (Long id);
 }

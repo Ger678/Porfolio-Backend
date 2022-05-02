@@ -3,29 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aguirregermanportfolio.PortfolioGerman.model.service;
+package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.ExperienciaLaboral;
+import com.aguirregermanportfolio.PortfolioGerman.model.Educacion;
 import java.util.List;
 
 /**
  *
  * @author German
  */
-public interface IExperienciaLaboralService {
-    
+public interface IEducacionService {
     
     //método para traer todas las personas
-    public List<ExperienciaLaboral> getExperiencia();    
+    public List<Educacion> getEducacion();    
     
     //método para dar el alta una persona
-    public void saveExperiencia (ExperienciaLaboral expe);
+    public void saveEducacion (Educacion educ);
     
     //método para borrar una persona
-    public void deleteExperiencia (Long id);
+    public void deleteEducacion (Long id);
     
     //método para encontrar una persona
-    public ExperienciaLaboral findExperiencia (Long id);
+    public Educacion findEducacion (Long id);
     
 }
-    

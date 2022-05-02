@@ -34,10 +34,10 @@ public class Educacion implements Serializable{
     public Educacion() {
     }
 
-    public Educacion(Long id, String tituloEstudios, String casaDeEstudios, String fechaInicio, String fechaTermino, String urlLogo) {
+    public Educacion(Long id, String tituloEstudios, String casaEstudios, String fechaInicio, String fechaTermino, String urlLogo) {
         this.id = id;
         this.tituloEstudios = tituloEstudios;
-        this.casaEstudios = casaDeEstudios;
+        this.casaEstudios = casaEstudios;
         this.inicio = fechaInicio;
         this.termino = fechaTermino;
         this.urlLogo = urlLogo;

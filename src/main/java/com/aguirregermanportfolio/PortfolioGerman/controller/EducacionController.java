@@ -6,7 +6,7 @@
 package com.aguirregermanportfolio.PortfolioGerman.controller;
 
 import com.aguirregermanportfolio.PortfolioGerman.model.Educacion;
-import com.aguirregermanportfolio.PortfolioGerman.model.service.IEducacionService;
+import com.aguirregermanportfolio.PortfolioGerman.service.IEducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

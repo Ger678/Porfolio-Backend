@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aguirregermanportfolio.PortfolioGerman.model.service;
+package com.aguirregermanportfolio.PortfolioGerman.service;
 
 import com.aguirregermanportfolio.PortfolioGerman.model.ExperienciaLaboral;
-import com.aguirregermanportfolio.PortfolioGerman.model.repository.ExperienciaLaboralRepository;
+import com.aguirregermanportfolio.PortfolioGerman.repository.ExperienciaLaboralRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
