@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,29 +25,32 @@ import org.springframework.web.bind.annotation.RestController;
  * @author German
  */
 @RestController
+@RequestMapping ("/persona")
+
 public class PersonaController {
     
     @Autowired
     private IPersonaService interPersona;
     
-    @GetMapping ("/personas/traer")
+    @GetMapping ("/traer")
+    @ResponseBody
     public List<Persona> getPersonas(){
         return interPersona.getPersona();
     }
     
-    @PostMapping ("/personas/crear")
+    @PostMapping ("crear")
     public String crearPersona(@RequestBody Persona perso){
         interPersona.savePersona(perso);
         return "La persona fue creada correctamente";
     }
     
-    @DeleteMapping ("/personas/borrar/{id}")
+    @DeleteMapping ("/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
         interPersona.deletePersona(id);
         return "La persona fue correctamente eliminada";
     }
     
-    @PutMapping ("/personas/editar/{id}")
+    @PutMapping ("/editar/{id}")
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam ("nombre") String nuevoNombre,
                                @RequestParam ("apellido") String nuevoApellido,
@@ -60,4 +65,6 @@ public class PersonaController {
         interPersona.savePersona(perso);        
         return perso;
     }
+    
+    
 }
