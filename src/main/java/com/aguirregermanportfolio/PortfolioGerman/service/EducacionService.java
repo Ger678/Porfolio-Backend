@@ -9,11 +9,13 @@ import com.aguirregermanportfolio.PortfolioGerman.model.Educacion;
 import com.aguirregermanportfolio.PortfolioGerman.repository.EducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author German
  */
+@Service
 public class EducacionService implements IEducacionService {
 
     @Autowired
