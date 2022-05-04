@@ -8,14 +8,18 @@ package com.aguirregermanportfolio.PortfolioGerman.service;
 import com.aguirregermanportfolio.PortfolioGerman.model.Habilidades;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author German
  */
+@Service
 public class HabilidadesService implements IHabilidadesService {
 
     @Autowired
+    @Lazy
     private IHabilidadesService interHab;
     
     @Override

@@ -9,11 +9,13 @@ import com.aguirregermanportfolio.PortfolioGerman.model.Proyectos;
 import com.aguirregermanportfolio.PortfolioGerman.repository.ProyectosRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author German
  */
+@Service
 public class ProyectosService implements IProyectosService {
 
     @Autowired
