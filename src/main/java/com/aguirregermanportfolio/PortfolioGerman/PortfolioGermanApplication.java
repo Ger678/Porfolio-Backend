@@ -9,5 +9,5 @@ public class PortfolioGermanApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PortfolioGermanApplication.class, args);
 	}
-
+        
 }

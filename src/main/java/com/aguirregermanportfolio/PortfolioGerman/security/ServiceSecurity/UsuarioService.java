@@ -1,5 +1,8 @@
+package com.aguirregermanportfolio.PortfolioGerman.security.ServiceSecurity;
+
 
 import com.aguirregermanportfolio.PortfolioGerman.security.ModelSecurity.Usuario;
+import com.aguirregermanportfolio.PortfolioGerman.security.RepositorySecurity.UsuarioRepository;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

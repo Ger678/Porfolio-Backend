@@ -1,6 +1,9 @@
+package com.aguirregermanportfolio.PortfolioGerman.security.ServiceSecurity;
+
 
 import com.aguirregermanportfolio.PortfolioGerman.security.Enums.RolNombre;
 import com.aguirregermanportfolio.PortfolioGerman.security.ModelSecurity.Rol;
+import com.aguirregermanportfolio.PortfolioGerman.security.RepositorySecurity.RolRepository;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,10 @@ public class RolService {
     
     public Optional<Rol> getByRolNombre( RolNombre rolNombre){
         return rolRepository.findByRolNombre(rolNombre);
+    }
+    
+    public void save(Rol rol){
+        rolRepository.save(rol);
     }
     
 }
