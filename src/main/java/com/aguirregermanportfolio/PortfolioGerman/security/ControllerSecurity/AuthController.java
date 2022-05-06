@@ -91,6 +91,9 @@ public class AuthController {
         if( bindingResult.hasErrors()){
             return new ResponseEntity(new Mensaje("campos mal puestos"), HttpStatus.BAD_REQUEST);
         }
+        if(!usuarioService.existsByNombreUsuario(loginUsuario.getNombreUsuario())){
+            return new ResponseEntity(new Mensaje("El usuario no existe."), HttpStatus.BAD_REQUEST);
+        }
         
         Authentication auth =
                 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));

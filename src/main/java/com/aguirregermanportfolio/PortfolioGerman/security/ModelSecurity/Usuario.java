@@ -31,6 +31,7 @@ public class Usuario {
     @Column (unique = true)
     private String nombreUsuario;
     @NotNull
+    @Column (unique = true)
     private String email;
     @NotNull
     private String password;

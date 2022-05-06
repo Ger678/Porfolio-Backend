@@ -6,6 +6,7 @@ import com.aguirregermanportfolio.PortfolioGerman.security.RepositorySecurity.Us
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 /*
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Transactional
+@ComponentScan
 public class UsuarioService {
     
     @Autowired
