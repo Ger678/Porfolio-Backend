@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+
 package com.aguirregermanportfolio.PortfolioGerman.utl;
 
 import com.aguirregermanportfolio.PortfolioGerman.security.Enums.RolNombre;
@@ -12,10 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
+
  *
  * @author German
- */
+
 @Component
 public class CrearRoles implements CommandLineRunner{
 
@@ -32,3 +32,4 @@ public class CrearRoles implements CommandLineRunner{
     }
       
 }
+*/
