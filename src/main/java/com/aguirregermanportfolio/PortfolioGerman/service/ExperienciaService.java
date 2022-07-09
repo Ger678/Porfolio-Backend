@@ -5,8 +5,8 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.ExperienciaLaboral;
-import com.aguirregermanportfolio.PortfolioGerman.repository.ExperienciaLaboralRepository;
+import com.aguirregermanportfolio.PortfolioGerman.model.Experiencia;
+import com.aguirregermanportfolio.PortfolioGerman.repository.ExperienciaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,19 +16,19 @@ import org.springframework.stereotype.Service;
  * @author German
  */
 @Service
-public class ExperienciaLaboralService implements IExperienciaLaboralService {
+public class ExperienciaService implements IExperienciaService {
 
     @Autowired
-    private ExperienciaLaboralRepository expRepo;
+    private ExperienciaRepository expRepo;
     
     @Override
-    public List<ExperienciaLaboral> getExperiencia() {
-        List<ExperienciaLaboral> listaExperiencia = expRepo.findAll();
+    public List<Experiencia> getExperiencia() {
+        List<Experiencia> listaExperiencia = expRepo.findAll();
         return listaExperiencia;
     }
 
     @Override
-    public void saveExperiencia(ExperienciaLaboral expe) {
+    public void saveExperiencia(Experiencia expe) {
         expRepo.save(expe);
     }
 
@@ -38,8 +38,8 @@ public class ExperienciaLaboralService implements IExperienciaLaboralService {
     }
 
     @Override
-    public ExperienciaLaboral findExperiencia(Long id) {
-        ExperienciaLaboral exp = expRepo.findById(id).orElse(null);
+    public Experiencia findExperiencia(Long id) {
+        Experiencia exp = expRepo.findById(id).orElse(null);
         return exp;
     }
     

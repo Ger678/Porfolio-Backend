@@ -5,8 +5,8 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.controller;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Persona;
-import com.aguirregermanportfolio.PortfolioGerman.service.IPersonaService;
+import com.aguirregermanportfolio.PortfolioGerman.model.Portada;
+import com.aguirregermanportfolio.PortfolioGerman.service.IPortadaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,45 +25,50 @@ import org.springframework.web.bind.annotation.RestController;
  * @author German
  */
 @RestController
-@RequestMapping ("/persona")
+@RequestMapping ("/portada")
 
-public class PersonaController {
+public class PortadaController {
     
     @Autowired
-    private IPersonaService interPersona;
+    private IPortadaService interPortada;
     
     @GetMapping ("/traer")
     @ResponseBody
-    public List<Persona> getPersonas(){
-        return interPersona.getPersona();
+    public List<Portada> getPortada(){
+        return interPortada.getPortada();
     }
     
     @PostMapping ("crear")
-    public String crearPersona(@RequestBody Persona perso){
-        interPersona.savePersona(perso);
-        return "La persona fue creada correctamente";
+    public String crearPortada(@RequestBody Portada port){
+        interPortada.savePortada(port);
+        return "La Portada fue creada correctamente";
     }
     
     @DeleteMapping ("/borrar/{id}")
-    public String deletePersona(@PathVariable Long id){
-        interPersona.deletePersona(id);
-        return "La persona fue correctamente eliminada";
+    public String deletePortada(@PathVariable Long id){
+        interPortada.deletePortada(id);
+        return "La Portada fue correctamente eliminada";
     }
     
     @PutMapping ("/editar/{id}")
-    public Persona editPersona(@PathVariable Long id,
+    public Portada editPortada(@PathVariable Long id,
                                @RequestParam ("nombre") String nuevoNombre,
                                @RequestParam ("apellido") String nuevoApellido,
-                               @RequestParam ("edad") int nuevaEdad){
+                               @RequestParam ("perfilUrl") String nuevoPerfil,
+                               @RequestParam ("portadaUrl") String nuevaPortada,
+                               @RequestParam ("contenido") String nuevoContenido){
         
-        Persona perso = interPersona.findPersona(id);
+        Portada port = interPortada.findPortada(id);
         
-        perso.setApellido(nuevoApellido);
-        perso.setNombre(nuevoNombre);
-        perso.setEdad(nuevaEdad);
+        port.setApellido(nuevoApellido);
+        port.setNombre(nuevoNombre);
+        port.setPerfilUrl(nuevoPerfil);
+        port.setPortadaUrl(nuevaPortada);
+        port.setContenido(nuevoContenido);
         
-        interPersona.savePersona(perso);        
-        return perso;
+        
+        interPortada.savePortada(port);        
+        return port;
     }
     
     

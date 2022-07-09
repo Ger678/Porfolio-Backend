@@ -5,26 +5,27 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Educacion;
+import com.aguirregermanportfolio.PortfolioGerman.model.Experiencia;
 import java.util.List;
 
 /**
  *
  * @author German
  */
-public interface IEducacionService {
+public interface IExperienciaService {
+    
     
     //método para traer todas las personas
-    public List<Educacion> getEducacion();    
+    public List<Experiencia> getExperiencia();    
     
     //método para dar el alta una persona
-    public void saveEducacion (Educacion educ);
+    public void saveExperiencia (Experiencia expe);
     
     //método para borrar una persona
-    public void deleteEducacion (Long id);
-    
+    public void deleteExperiencia (Long id);
     
     //método para encontrar una persona
-    public Educacion findEducacion (Long id);
+    public Experiencia findExperiencia (Long id);
     
 }
+    

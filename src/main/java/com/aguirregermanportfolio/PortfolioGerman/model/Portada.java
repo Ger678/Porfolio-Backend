@@ -17,31 +17,33 @@ import lombok.Setter;
  *
  * @author German
  */
+
+@Getter @Setter
 @Entity
-@Getter
-@Setter
-public class Proyectos implements Serializable {
-    
-
+public class Portada implements Serializable {
+     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    
+    @GeneratedValue (strategy=GenerationType.AUTO)
     private Long id;
+    
     private String nombre;
-    private String descripcion;
-    private String urlImagen;
-    private String urlProyecto;
+    private String apellido;
+    private String perfilUrl;
+    private String portadaUrl;
+    private String contenido;
 
-    public Proyectos() {
+    public Portada() {
     }
 
-    public Proyectos(Long id, String nombre, String descripcion, String urlImagen, String urlProyecto) {
+    public Portada(Long id, String nombre, String apellido, String perfilUrl, String portadaUrl, String contenido) {
         this.id = id;
         this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.urlImagen = urlImagen;
-        this.urlProyecto = urlProyecto;
+        this.apellido = apellido;
+        this.perfilUrl = perfilUrl;
+        this.portadaUrl = portadaUrl;
+        this.contenido = contenido;
     }
-     
+ 
+    
     
 }

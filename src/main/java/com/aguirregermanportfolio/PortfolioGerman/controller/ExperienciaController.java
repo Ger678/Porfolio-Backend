@@ -5,8 +5,8 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.controller;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.ExperienciaLaboral;
-import com.aguirregermanportfolio.PortfolioGerman.service.IExperienciaLaboralService;
+import com.aguirregermanportfolio.PortfolioGerman.model.Experiencia;
+import com.aguirregermanportfolio.PortfolioGerman.service.IExperienciaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,20 +26,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping ("/experiencia") 
-public class ExperienciaLaboralController {
+public class ExperienciaController {
     
     @Autowired
-    private IExperienciaLaboralService interExperiencia;
+    private IExperienciaService interExperiencia;
     
     
     @GetMapping ("/traer")
     @ResponseBody
-    public List<ExperienciaLaboral> traerExperiencia(){
+    public List<Experiencia> traerExperiencia(){
         return interExperiencia.getExperiencia();
     }
     
     @PostMapping ("/crear")
-    public String crearExperiencia(@RequestBody ExperienciaLaboral exp){
+    public String crearExperiencia(@RequestBody Experiencia exp){
         interExperiencia.saveExperiencia(exp);
         return "  ";
     }
@@ -51,20 +51,16 @@ public class ExperienciaLaboralController {
     }
     
     @PutMapping ("/editar/{id}")
-    public ExperienciaLaboral editExperiencia (@PathVariable Long id,
-                                               @RequestParam ("puesto") String nuevoPuesto,
-                                               @RequestParam ("nombreEmpresa") String nuevoNombreEmpresa,
-                                               @RequestParam ("fechaInicio") String nuevaFechaInicio,
-                                               @RequestParam ("fechaFinal") String nuevaFechaFinal,
-                                               @RequestParam ("descripcion") String nuevaDescripcion){
+    public Experiencia editExperiencia (@PathVariable Long id,
+                                               @RequestParam ("titulo") String nuevoTitulo,
+                                               @RequestParam ("contenido") String nuevoContenido,
+                                               @RequestParam ("icono") String nuevoIcono){
         
-        ExperienciaLaboral expe = interExperiencia.findExperiencia(id);
+        Experiencia expe = interExperiencia.findExperiencia(id);
         
-        expe.setPuesto(nuevoPuesto);
-        expe.setNombreEmpresa(nuevoNombreEmpresa);
-        expe.setFechaInicio(nuevaFechaInicio);
-        expe.setFechaFinal(nuevaFechaFinal);
-        expe.setDescripcion(nuevaDescripcion);
+        expe.setTitulo(nuevoTitulo);
+        expe.setContenido(nuevoContenido);
+        expe.setIcono(nuevoIcono);
         
         interExperiencia.saveExperiencia(expe);
         return expe;        

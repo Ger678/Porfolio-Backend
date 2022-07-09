@@ -5,25 +5,23 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Proyectos;
+import com.aguirregermanportfolio.PortfolioGerman.model.EducacionItems;
 import java.util.List;
 
 /**
  *
  * @author German
  */
-public interface IProyectosService {
+public interface IEducacionItems {
     
-     //método para traer todas las personas
-    public List<Proyectos> getProyectos();    
+        //método para traer todas las personas
+    public List<EducacionItems> getEducacionItems();    
     
     //método para dar el alta una persona
-    public void saveProyectos (Proyectos perso);
-    
-    //método para borrar una persona
-    public void deleteProyectos (Long id);
+    public void saveEducacionItems (EducacionItems educ);
+        
+    public void deleteEducacionItems (Long itemID);
     
     //método para encontrar una persona
-    public Proyectos findProyectos (Long id);
-    
+    public EducacionItems findEducacionItems (Long id);
 }

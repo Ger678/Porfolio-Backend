@@ -17,32 +17,31 @@ import lombok.Setter;
  *
  * @author German
  */
+
 @Getter
 @Setter
 @Entity
-public class Educacion implements Serializable{
+public class AcercaDeMi implements Serializable {
     
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long itemId;
+    private Long id;
     private String titulo;
-    private String fecha;
+    private String contenido;
     private String icono;
-
-    public Educacion() {
-    }
-
-    public Educacion(Long id,Long itemId, String titulo, String fecha, String icono) {
+    
+    public AcercaDeMi() {
+       }
+    
+    public AcercaDeMi(Long id, String titulo, String contenido, String icono) {
         this.id = id;
-        this.itemId= itemId;
         this.titulo = titulo;
-        this.fecha = fecha;
+        this.contenido = contenido;
         this.icono = icono;
-    }
+    } 
 
-   
-
+    
+    
 }

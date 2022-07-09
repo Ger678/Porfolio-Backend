@@ -54,18 +54,17 @@ public class EducacionController {
     
     @PutMapping ("/edit/{id}")
     public Educacion editEducacion(@PathVariable Long id,
-                                   @RequestParam ("tituloEstudios") String nuevoTituloEstudios,
-                                   @RequestParam ("casaEstudio") String nuevoCasaEstudios,
-                                   @RequestParam ("inicio") String nuevoInicio,
-                                   @RequestParam ("urlLogo") String nuevoUrlLogo){
+                                   @RequestParam ("itemId") Long nuevoItemId,
+                                   @RequestParam ("titulo") String nuevoTitulo,
+                                   @RequestParam ("fecha") String nuevaFecha,
+                                   @RequestParam ("icono") String nuevoIcono){
         
         Educacion educ = interEduc.findEducacion(id);
         
-        educ.setTituloEstudios(nuevoTituloEstudios);
-        educ.setCasaEstudios(nuevoCasaEstudios);
-        educ.setInicio(nuevoInicio);
-        educ.setTermino(nuevoInicio);
-        educ.setUrlLogo(nuevoUrlLogo);
+        educ.setItemId(id);
+        educ.setTitulo(nuevoTitulo);
+        educ.setFecha(nuevaFecha);
+        educ.setIcono(nuevoIcono);
         
         interEduc.saveEducacion(educ);
         return educ;

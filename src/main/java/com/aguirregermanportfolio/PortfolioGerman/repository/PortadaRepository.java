@@ -5,7 +5,7 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.repository;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.ExperienciaLaboral;
+import com.aguirregermanportfolio.PortfolioGerman.model.Portada;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,9 +15,9 @@ import org.springframework.stereotype.Repository;
  * @author German
  */
 @Repository
-public interface ExperienciaLaboralRepository extends JpaRepository<ExperienciaLaboral, Long>{
+public interface PortadaRepository extends JpaRepository <Portada, Long> {
     
-    void deleteExperienciaLaboralById(Long id);
+    void deletePortadaById(Long id);
     
-    Optional<ExperienciaLaboral> findExperienciaLaboralById(Long id);    
+    Optional<Portada> findPortadaById(Long id);
 }

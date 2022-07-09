@@ -5,27 +5,25 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.ExperienciaLaboral;
+import com.aguirregermanportfolio.PortfolioGerman.model.AcercaDeMi;
 import java.util.List;
 
 /**
  *
  * @author German
  */
-public interface IExperienciaLaboralService {
+public interface IAcercaDeMiService {
     
-    
-    //método para traer todas las personas
-    public List<ExperienciaLaboral> getExperiencia();    
+     //método para traer todas las personas
+    public List<AcercaDeMi> getAcercaDeMi();    
     
     //método para dar el alta una persona
-    public void saveExperiencia (ExperienciaLaboral expe);
+    public void saveAcercaDeMi (AcercaDeMi acerca);
     
     //método para borrar una persona
-    public void deleteExperiencia (Long id);
+    public void deleteAcercaDeMi (Long id);
     
     //método para encontrar una persona
-    public ExperienciaLaboral findExperiencia (Long id);
+    public AcercaDeMi findAcercaDeMi (Long id);
     
 }
-    

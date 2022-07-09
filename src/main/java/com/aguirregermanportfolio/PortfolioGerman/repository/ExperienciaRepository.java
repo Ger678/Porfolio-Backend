@@ -5,17 +5,19 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.repository;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Proyectos;
+import com.aguirregermanportfolio.PortfolioGerman.model.Experiencia;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author German
  */
-public interface ProyectosRepository extends JpaRepository <Proyectos, Long> {
+@Repository
+public interface ExperienciaRepository extends JpaRepository<Experiencia, Long>{
     
-    void deleteProyectosById(Long id);
+    void deleteExperienciaById(Long id);
     
-    Optional<Proyectos> findProyectosById(Long id);
+    Optional<Experiencia> findExperienciaById(Long id);    
 }

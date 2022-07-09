@@ -5,7 +5,7 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.repository;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Persona;
+import com.aguirregermanportfolio.PortfolioGerman.model.AcercaDeMi;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,9 +15,9 @@ import org.springframework.stereotype.Repository;
  * @author German
  */
 @Repository
-public interface PersonaRepository extends JpaRepository <Persona, Long> {
+public interface AcercaDeMiRepository extends JpaRepository <AcercaDeMi, Long> {
     
-    void deletePersonaById(Long id);
+    void deleteAcercaDeMiById(Long id);
     
-    Optional<Persona> findPersonaById(Long id);
+    Optional<AcercaDeMi> findAcercaDeMiById(Long id);
 }

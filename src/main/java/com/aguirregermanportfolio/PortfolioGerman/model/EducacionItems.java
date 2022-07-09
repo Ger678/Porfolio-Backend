@@ -20,29 +20,24 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Educacion implements Serializable{
+public class EducacionItems implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
-    
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long itemId;
     private String titulo;
     private String fecha;
-    private String icono;
+    private String logo;
 
-    public Educacion() {
+    public EducacionItems() {
     }
 
-    public Educacion(Long id,Long itemId, String titulo, String fecha, String icono) {
+    public EducacionItems(Long id, String titulo, String fecha, String logo) {
         this.id = id;
-        this.itemId= itemId;
         this.titulo = titulo;
         this.fecha = fecha;
-        this.icono = icono;
+        this.logo = logo;
     }
-
-   
-
+     
+    
 }
