@@ -20,23 +20,31 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Habilidades implements Serializable {
+public class Skills implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    
+    @GeneratedValue(strategy = GenerationType.AUTO)    
     private Long id;
-    private String habilidad;
-    private String porcentaje;
+    
+    private String icono;
+    private String nombre;
+    private String descripcion;
+    private String fotos;
+    private Long porcentaje;
 
-    public Habilidades() {
+    public Skills() {
     }
 
-    public Habilidades(Long id, String habilidad, String porcentaje) {
+    public Skills(Long id, String icono, String nombre, String descripcion, String fotos, Long porcentaje) {
         this.id = id;
-        this.habilidad = habilidad;
+        this.icono = icono;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fotos = fotos;
         this.porcentaje = porcentaje;
     }
+
+    
     
     
 }

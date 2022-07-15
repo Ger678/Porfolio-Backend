@@ -5,25 +5,27 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.service;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Habilidades;
+import com.aguirregermanportfolio.PortfolioGerman.model.Skills;
 import java.util.List;
 
 /**
  *
  * @author German
  */
-public interface IHabilidadesService {
+public interface ISkillsService {
     
     //método para traer todas las personas
-    public List<Habilidades> getHabilidades();    
+    public List<Skills> getSkills();    
     
     //método para dar el alta una persona
-    public void saveHabilidades (Habilidades habi);
+    public void saveSkills (Skills skills);
     
     //método para borrar una persona
-    public void deleteHabilidades (Long id);
+    public void deleteSkills (Long id);
     
     //método para encontrar una persona
-    public Habilidades findHabilidades (Long id);
+    public Skills findSkills (Long id);
+    
+    public Skills findById (Long id);
     
 }

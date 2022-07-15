@@ -5,7 +5,7 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.repository;
 
-import com.aguirregermanportfolio.PortfolioGerman.model.Habilidades;
+import com.aguirregermanportfolio.PortfolioGerman.model.Skills;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,10 +13,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author German
  */
-public interface HabilidadesRepository extends JpaRepository<Habilidades, Long> {
+public interface SkillsRepository extends JpaRepository<Skills, Long> {
     
-    void deleteHabilidadesById(Long id);
+    void deleteSkillsById(Long id);
     
-    Optional<Habilidades> findHabilidadesById(Long id);
+    Optional<Skills> findSkillsById(Long id);
     
 }
