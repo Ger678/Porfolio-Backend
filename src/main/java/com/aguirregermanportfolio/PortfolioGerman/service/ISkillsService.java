@@ -25,7 +25,5 @@ public interface ISkillsService {
     
     //método para encontrar una persona
     public Skills findSkills (Long id);
-    
-    public Skills findById (Long id);
-    
+        
 }

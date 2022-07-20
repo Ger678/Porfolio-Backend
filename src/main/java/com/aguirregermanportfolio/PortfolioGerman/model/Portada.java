@@ -27,7 +27,7 @@ public class Portada implements Serializable {
     private Long id;
     
     private String nombre;
-    private String apellido;
+    private String subtitulo;
     private String perfilUrl;
     private String portadaUrl;
     private String contenido;
@@ -35,15 +35,13 @@ public class Portada implements Serializable {
     public Portada() {
     }
 
-    public Portada(Long id, String nombre, String apellido, String perfilUrl, String portadaUrl, String contenido) {
+    public Portada(Long id, String nombre,String subtitulo, String perfilUrl, String portadaUrl, String contenido) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.subtitulo = subtitulo;
         this.perfilUrl = perfilUrl;
         this.portadaUrl = portadaUrl;
         this.contenido = contenido;
     }
- 
-    
-    
+
 }

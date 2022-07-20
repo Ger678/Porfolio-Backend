@@ -5,10 +5,14 @@
  */
 package com.aguirregermanportfolio.PortfolioGerman.controller;
 
+
 import com.aguirregermanportfolio.PortfolioGerman.model.Portada;
 import com.aguirregermanportfolio.PortfolioGerman.service.IPortadaService;
+import com.aguirregermanportfolio.PortfolioGerman.service.PortadaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +33,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/portada")
 @CrossOrigin
 public class PortadaController {
+    
+    @Autowired
+    private PortadaService portService;
     
     @Autowired
     private IPortadaService interPortada;
@@ -50,19 +57,19 @@ public class PortadaController {
         interPortada.deletePortada(id);
         return "La Portada fue correctamente eliminada";
     }
-    
+    /*
     @PutMapping ("/editar/{id}")
     public Portada editPortada(@PathVariable Long id,
                                @RequestParam ("nombre") String nuevoNombre,
-                               @RequestParam ("apellido") String nuevoApellido,
+                               @RequestParam ("subtitulo") String nuevoSubtitulo,
                                @RequestParam ("perfilUrl") String nuevoPerfil,
                                @RequestParam ("portadaUrl") String nuevaPortada,
                                @RequestParam ("contenido") String nuevoContenido){
         
         Portada port = interPortada.findPortada(id);
         
-        port.setApellido(nuevoApellido);
         port.setNombre(nuevoNombre);
+        port.setSubtitulo(nuevoSubtitulo);
         port.setPerfilUrl(nuevoPerfil);
         port.setPortadaUrl(nuevaPortada);
         port.setContenido(nuevoContenido);
@@ -70,7 +77,12 @@ public class PortadaController {
         
         interPortada.savePortada(port);        
         return port;
+    }*/
+    
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Portada> updatePortada(@PathVariable Long id, @RequestBody Portada port) {
+        Portada updatePort = portService.updatePortada(port);
+        return new ResponseEntity<>(updatePort, HttpStatus.CREATED);
     }
-    
-    
+   
 }

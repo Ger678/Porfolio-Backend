@@ -38,6 +38,10 @@ public class PortadaService implements IPortadaService {
     public void deletePortada(Long id) {
         portRepository.deleteById(id);
     }
+    
+    public Portada updatePortada(Portada port) {
+        return portRepository.save(port);
+    }
 
     @Override
     public Portada findPortada(Long id) {

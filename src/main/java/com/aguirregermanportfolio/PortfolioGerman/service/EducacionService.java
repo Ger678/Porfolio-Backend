@@ -37,6 +37,9 @@ public class EducacionService implements IEducacionService {
         educRepo.deleteById(id);
     }
     
+    public Educacion updateEduc(Educacion educ) {
+        return educRepo.save(educ);
+    }
     
     @Override
     public Educacion findEducacion(Long id) {

@@ -43,4 +43,8 @@ public class SkillsService implements ISkillsService {
         return hab; 
     }
     
+    public Skills updateSkill(Skills skill){
+        return skiRepo.save(skill);
+    }
+    
 }

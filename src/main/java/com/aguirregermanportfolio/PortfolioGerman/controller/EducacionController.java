@@ -6,9 +6,12 @@
 package com.aguirregermanportfolio.PortfolioGerman.controller;
 
 import com.aguirregermanportfolio.PortfolioGerman.model.Educacion;
+import com.aguirregermanportfolio.PortfolioGerman.service.EducacionService;
 import com.aguirregermanportfolio.PortfolioGerman.service.IEducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,9 +33,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class EducacionController {
     
     @Autowired
+    private EducacionService educService;
+    
+    @Autowired
     private IEducacionService interEduc;
-    
-    
+        
     @GetMapping ("/traer")
     @ResponseBody
     public List<Educacion> getEducacion(){
@@ -52,7 +57,7 @@ public class EducacionController {
         return " ";        
     }
     
-    @PutMapping ("/edit/{id}")
+   /* @PutMapping ("/edit/{id}")
     public Educacion editEducacion(@PathVariable Long id,
                                    @RequestParam ("itemId") Long nuevoItemId,
                                    @RequestParam ("titulo") String nuevoTitulo,
@@ -68,5 +73,11 @@ public class EducacionController {
         
         interEduc.saveEducacion(educ);
         return educ;
-    } 
+    } */
+    
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Educacion> updateEducacion(@PathVariable Long id, @RequestBody Educacion educ) {
+        Educacion updateEduc = educService.updateEduc(educ);
+        return new ResponseEntity<>(updateEduc, HttpStatus.CREATED);
+    }    
 }

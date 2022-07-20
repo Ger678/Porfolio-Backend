@@ -36,6 +36,10 @@ public class AcercaDeMiService implements IAcercaDeMiService {
     public void deleteAcercaDeMi(Long id) {
         acercaRepository.deleteById(id);
     }
+    
+    public AcercaDeMi updateAcercaDeMi(AcercaDeMi acerca) {
+        return acercaRepository.save(acerca);
+    }
 
     @Override
     public AcercaDeMi findAcercaDeMi(Long id) {

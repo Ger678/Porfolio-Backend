@@ -19,5 +19,5 @@ public interface PortadaRepository extends JpaRepository <Portada, Long> {
     
     void deletePortadaById(Long id);
     
-    Optional<Portada> findPortadaById(Long id);
+    Optional<Portada> findPortadaById(int id);
 }

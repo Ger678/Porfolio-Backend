@@ -6,9 +6,12 @@
 package com.aguirregermanportfolio.PortfolioGerman.controller;
 
 import com.aguirregermanportfolio.PortfolioGerman.model.AcercaDeMi;
+import com.aguirregermanportfolio.PortfolioGerman.service.AcercaDeMiService;
 import com.aguirregermanportfolio.PortfolioGerman.service.IAcercaDeMiService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +31,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/acerca")
 
 public class AcercaDeMiController {
+    
+    @Autowired
+    private AcercaDeMiService acercaService;
     
     @Autowired
     private IAcercaDeMiService interAcerca;
@@ -52,7 +58,7 @@ public class AcercaDeMiController {
         return "";    
     }
     
-    @PutMapping ("/edit/{id}")
+    /*@PutMapping ("/edit/{id}")
     public AcercaDeMi editAcerca (@PathVariable Long id,
                                     @RequestParam ("titulo") String nuevoTitulo,
                                     @RequestParam ("contenido") String nuevaContenido,
@@ -68,5 +74,11 @@ public class AcercaDeMiController {
         
         interAcerca.saveAcercaDeMi(acerca);
         return acerca;        
-    }       
+    }*/       
+    
+    @PutMapping("/update/{id}")
+    public ResponseEntity<AcercaDeMi> updatePortada(@PathVariable Long id, @RequestBody AcercaDeMi acerca) {
+        AcercaDeMi updateAcerca = acercaService.updateAcercaDeMi(acerca);
+        return new ResponseEntity<>(updateAcerca, HttpStatus.CREATED);
+    }
 }

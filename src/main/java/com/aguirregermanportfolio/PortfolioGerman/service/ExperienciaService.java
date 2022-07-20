@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ExperienciaService implements IExperienciaService {
-
+    
     @Autowired
     private ExperienciaRepository expRepo;
     
@@ -41,6 +41,10 @@ public class ExperienciaService implements IExperienciaService {
     public Experiencia findExperiencia(Long id) {
         Experiencia exp = expRepo.findById(id).orElse(null);
         return exp;
+    }
+    
+    public Experiencia updateExpe(Experiencia expe){
+       return expRepo.save(expe);        
     }
     
 }
