@@ -45,13 +45,13 @@ public class AcercaDeMiController {
         return listaAcerca;
     }
     
-    @PostMapping ("/cear")
+    @PostMapping ("/crear")
     public String crearAcercaDeMi(@RequestBody AcercaDeMi acerca){
         interAcerca.saveAcercaDeMi(acerca);
         return "";
     }
     
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/borrar/{id}")
     public String deleteAcercaDeMi (@PathVariable Long id){
         
         interAcerca.deleteAcercaDeMi(id);

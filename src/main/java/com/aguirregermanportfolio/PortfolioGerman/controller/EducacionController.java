@@ -51,10 +51,10 @@ public class EducacionController {
         return " ";
     }
     
-    @DeleteMapping ("/delete/{id}")
-    public String deleteEducacion(@PathVariable Long id){
-        interEduc.findEducacion(id);
-        return " ";        
+    @DeleteMapping ("/borrar/{id}")
+    public ResponseEntity<?> deleteEducacion(@PathVariable("id") Long id){
+        educService.deleteEducacion(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
     
    /* @PutMapping ("/edit/{id}")

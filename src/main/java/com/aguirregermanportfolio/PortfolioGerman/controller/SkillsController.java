@@ -52,10 +52,10 @@ public class SkillsController {
         return "Skill agregada";
     }
     
-    @DeleteMapping ("/delete/{id}")
-    public String deleteSkills (@PathVariable Long id){
+    @DeleteMapping ("/borrar/{id}")
+    public ResponseEntity<?> deleteSkills(@PathVariable("id") Long id){
         interSki.deleteSkills(id);
-        return " ";
+        return new ResponseEntity<>(HttpStatus.OK);
     }
     
     @GetMapping ("/traer/{id}")
