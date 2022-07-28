@@ -1,4 +1,4 @@
-# Portfolio German Aguirre                                    ![GitHub language count](https://img.shields.io/github/languages/count/Ger678/Portfolio-Frontend)
+# Portfolio German Aguirre                                    ![GitHub language count](https://img.shields.io/github/languages/count/Ger678/Portfolio-Backend)
 
 This is my first Frontend project, this is were you will find diferents Api's, languages and technologies wich i use to work in this WPA. This is a project carried out within a framework of a course in Argentina called [#ArgentinaProgama](https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa). I hope you enjoy it.
 
@@ -6,34 +6,31 @@ This is my first Frontend project, this is were you will find diferents Api's, l
 
 ### Description
 
-This project aims to introduce me as a Full Stack web developer. The Frontend part manages routes, to be located correctly in the app. Use Angular for development and bootstrap to give it the style you were looking for.
+This project aims to introduce me as a Full Stack web developer. The Backend part implements a basic CRUD. I use Sprinboot for the development of this API and implement it as I needed for this project
 
-### Instructions
+### MVC
 
-To know the basic functionalities of the APP, a personal username and password is necessary.
-> The username and password were previously submitted for a project evaluation.
+Use el patron mvc para estructurar mi api.
 
-After you loggin you will see my personal information and different ways to contact me.
+* Controller Class
+* Model Class
+* Repository Interface
+* Service Class / Interfaces
 
-> Also you can visit the app whit the "Visita" button
-
-#### Buttons functions
+#### CRUD
 
 The principal idea i had when i was developing the frontend part are the side buttons menu, the function of the buttons work when you select an element. It had 6 diffents options.
 
-| Button        | Function      | Logged|
+| Button        | Function      | HTTP|
 | ------------- |:-------------:| -----:|
-| Share     | Share the page | no |
-| New      | Create a selected new element | Si |
-| Check | (still in work)      |    Si |
-| Delete | Delete a selected element      |    Si |
-| Edit | Edit a selected element      |    Si |
-| Exit | hides the button menu      |    Si |
+| Create     | Create a new element | POST |
+| Read      | Show an element | GET |
+| Update |   Update an element   |    PUT |
+| Delete | Delete an element      |    DELETE |
 
-#### Skills Window "Toca los logos"
+#### JAVA & SPRINGBOOT
 
-This is a way to show the basic information from icons of the differents languages, technologies and frameworks i use for this project.
-Just **tap** any icon
+I use version 18 of Java for the development of this project and spring boot to focus only on the functionality of the application
 
 ## Learning
 
