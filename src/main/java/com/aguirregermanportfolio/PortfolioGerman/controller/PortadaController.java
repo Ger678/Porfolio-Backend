@@ -52,32 +52,11 @@ public class PortadaController {
         return "La Portada fue creada correctamente";
     }
     
-    @DeleteMapping ("/borrar/{id}")
-    public String deletePortada(@PathVariable Long id){
-        interPortada.deletePortada(id);
-        return "La Portada fue correctamente eliminada";
+    @DeleteMapping ("/delete/{id}")
+    public ResponseEntity<?> deleteAcercaDeMi (@PathVariable("id") Long id){        
+        portService.deletePortada(id);
+        return new ResponseEntity<>(HttpStatus.OK); 
     }
-    /*
-    @PutMapping ("/editar/{id}")
-    public Portada editPortada(@PathVariable Long id,
-                               @RequestParam ("nombre") String nuevoNombre,
-                               @RequestParam ("subtitulo") String nuevoSubtitulo,
-                               @RequestParam ("perfilUrl") String nuevoPerfil,
-                               @RequestParam ("portadaUrl") String nuevaPortada,
-                               @RequestParam ("contenido") String nuevoContenido){
-        
-        Portada port = interPortada.findPortada(id);
-        
-        port.setNombre(nuevoNombre);
-        port.setSubtitulo(nuevoSubtitulo);
-        port.setPerfilUrl(nuevoPerfil);
-        port.setPortadaUrl(nuevaPortada);
-        port.setContenido(nuevoContenido);
-        
-        
-        interPortada.savePortada(port);        
-        return port;
-    }*/
     
     @PutMapping("/update/{id}")
     public ResponseEntity<Portada> updatePortada(@PathVariable Long id, @RequestBody Portada port) {

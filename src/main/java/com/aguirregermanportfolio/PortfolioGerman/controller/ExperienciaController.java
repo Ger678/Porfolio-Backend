@@ -51,26 +51,11 @@ public class ExperienciaController {
     }
     
     @DeleteMapping ("/delete/{id}")
-    public String deleteExperiencia(@PathVariable Long id){
-        interExperiencia.deleteExperiencia(id);
-        return " ";
+    public ResponseEntity<?> deleteAcercaDeMi (@PathVariable("id") Long id){        
+        expeService.deleteExperiencia(id);
+        return new ResponseEntity<>(HttpStatus.OK); 
     }
     
-    @PutMapping ("/editar/{id}")
-    public Experiencia editExperiencia (@PathVariable Long id,
-                                               @RequestParam ("titulo") String nuevoTitulo,
-                                               @RequestParam ("contenido") String nuevoContenido,
-                                               @RequestParam ("icono") String nuevoIcono){
-        
-        Experiencia expe = interExperiencia.findExperiencia(id);
-        
-        expe.setTitulo(nuevoTitulo);
-        expe.setContenido(nuevoContenido);
-        expe.setIcono(nuevoIcono);
-        
-        interExperiencia.saveExperiencia(expe);
-        return expe;        
-    }
     
     @PutMapping("/update/{id}")
     public ResponseEntity<Experiencia> updateExperiencia(@PathVariable Long id, @RequestBody Experiencia expe) {

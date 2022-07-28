@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,30 +50,12 @@ public class AcercaDeMiController {
         return "";
     }
     
-    @DeleteMapping ("/borrar/{id}")
-    public String deleteAcercaDeMi (@PathVariable Long id){
-        
-        interAcerca.deleteAcercaDeMi(id);
-        return "";    
+    @DeleteMapping ("/delete/{id}")
+    public ResponseEntity<?> deleteAcercaDeMi (@PathVariable("id") Long id){        
+        acercaService.deleteAcercaDeMi(id);
+        return new ResponseEntity<>(HttpStatus.OK);  
     }
-    
-    /*@PutMapping ("/edit/{id}")
-    public AcercaDeMi editAcerca (@PathVariable Long id,
-                                    @RequestParam ("titulo") String nuevoTitulo,
-                                    @RequestParam ("contenido") String nuevaContenido,
-                                    @RequestParam ("icono") String nuevaIcono ) 
         
-        {
-        
-        AcercaDeMi acerca = interAcerca.findAcercaDeMi(id);
-        
-        acerca.setTitulo(nuevoTitulo);
-        acerca.setContenido(nuevaContenido);
-        acerca.setIcono(nuevaIcono);
-        
-        interAcerca.saveAcercaDeMi(acerca);
-        return acerca;        
-    }*/       
     
     @PutMapping("/update/{id}")
     public ResponseEntity<AcercaDeMi> updatePortada(@PathVariable Long id, @RequestBody AcercaDeMi acerca) {

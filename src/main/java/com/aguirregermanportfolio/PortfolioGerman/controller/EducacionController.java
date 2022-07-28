@@ -51,29 +51,11 @@ public class EducacionController {
         return " ";
     }
     
-    @DeleteMapping ("/borrar/{id}")
+    @DeleteMapping ("/delete/{id}")
     public ResponseEntity<?> deleteEducacion(@PathVariable("id") Long id){
         educService.deleteEducacion(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    
-   /* @PutMapping ("/edit/{id}")
-    public Educacion editEducacion(@PathVariable Long id,
-                                   @RequestParam ("itemId") Long nuevoItemId,
-                                   @RequestParam ("titulo") String nuevoTitulo,
-                                   @RequestParam ("fecha") String nuevaFecha,
-                                   @RequestParam ("icono") String nuevoIcono){
-        
-        Educacion educ = interEduc.findEducacion(id);
-        
-        educ.setItemId(id);
-        educ.setTitulo(nuevoTitulo);
-        educ.setFecha(nuevaFecha);
-        educ.setIcono(nuevoIcono);
-        
-        interEduc.saveEducacion(educ);
-        return educ;
-    } */
     
     @PutMapping("/update/{id}")
     public ResponseEntity<Educacion> updateEducacion(@PathVariable Long id, @RequestBody Educacion educ) {

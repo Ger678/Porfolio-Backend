@@ -52,7 +52,7 @@ public class SkillsController {
         return "Skill agregada";
     }
     
-    @DeleteMapping ("/borrar/{id}")
+    @DeleteMapping ("/delete/{id}")
     public ResponseEntity<?> deleteSkills(@PathVariable("id") Long id){
         interSki.deleteSkills(id);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -65,25 +65,6 @@ public class SkillsController {
         return skiXId;
     }
     
-    @PutMapping ("/edit/{id}")
-    public Skills editSkills(@PathVariable Long id,
-                                       @RequestParam ("icono") String nuevoIcono,
-                                       @RequestParam ("nombre") String nuevoNombre,
-                                       @RequestParam ("descripcion") String nuevaDescripcion,
-                                       @RequestParam ("fotos") String nuevasFotos,
-                                       @RequestParam ("porcentaje") Long nuevoPorcentaje){
-        
-        Skills ski = interSki.findSkills(id);
-        
-        ski.setIcono(nuevoIcono);
-        ski.setNombre(nuevoNombre);
-        ski.setDescripcion(nuevaDescripcion);
-        ski.setFotos(nuevasFotos);
-        ski.setPorcentaje(nuevoPorcentaje);
-                
-        interSki.saveSkills(ski);
-        return ski;            
-    }
     
     @PutMapping ("/update/{id}")
     public ResponseEntity<Skills> updateSkills(@PathVariable Long id, @RequestBody Skills ski){
